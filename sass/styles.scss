@@ -1,0 +1,20 @@
+@import 'bourbon';
+@import 'variables';
+@import 'colors';
+@import 'global';
+
+// MIXINS
+
+
+// PARTIALS
+@import 'partial/main';
+
+
+// TOOLS
+
+
+// SCREENS
+@import 'screen/heating';
+@import 'screen/result';
+@import 'screen/snapshot';
+

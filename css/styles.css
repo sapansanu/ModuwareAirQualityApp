@@ -1,0 +1,334 @@
+* {
+  outline: none;
+  -webkit-tap-highlight-color: transparent; }
+
+svg {
+  width: 100%;
+  height: auto; }
+
+img {
+  max-width: 100%; }
+
+body {
+  font-family: Roboto; }
+
+button {
+  color: inherit;
+  font-size: inherit;
+  font-family: Roboto;
+  border: 0;
+  padding: 0;
+  background-color: transparent; }
+
+.hidden.hidden.hidden, #templates, .app-screen:not(.active) {
+  display: none; }
+
+.invisible {
+  visibility: hidden !important; }
+
+.no-overflow, #wrapper, .app-screen {
+  overflow: hidden; }
+
+.unselectable {
+  -webkit-user-select: none;
+  -moz-user-select: none;
+  -ms-user-select: none;
+  user-select: none; }
+
+#wrapper {
+  position: fixed;
+  top: 40px;
+  right: 0;
+  width: 100%;
+  height: calc(100% - 40px); }
+  body.platform-android #wrapper {
+    top: 55px;
+    height: calc(100% - 55px); }
+
+.main-screen {
+  position: absolute;
+  top: 0;
+  left: 0;
+  width: 100%;
+  height: 100%;
+  background-color: #ffffff;
+  /* Show the snackbar when clicking on a button (class added with JavaScript) */ }
+  .main-screen #snackbar {
+    visibility: hidden;
+    /* Hidden by default. Visible on click */
+    min-width: 100px;
+    /* Set a default minimum width */
+    padding: 5px;
+    background-color: #333;
+    /* Black background color */
+    color: #fff;
+    /* White text color */
+    text-align: center;
+    /* Centered text */
+    border-radius: 10px;
+    /* Rounded borders */
+    position: fixed;
+    /* Sit on top of the screen */
+    z-index: 11;
+    /* Add a z-index if needed */
+    left: 35%;
+    bottom: 70px;
+    /* 30px from the bottom */ }
+  .main-screen #snackbar.show {
+    visibility: visible;
+    /* Show the snackbar */ }
+
+.heating-screen {
+  position: absolute;
+  top: 0;
+  left: 0;
+  width: 100%;
+  height: 100%; }
+  body.platform-ios .heating-screen {
+    background-color: #EEEEEE; }
+  .heating-screen .warming-text {
+    order: 1;
+    margin: auto;
+    margin-top: 25%;
+    text-align: center;
+    font-size: 14px;
+    font-weight: 400;
+    color: black; }
+  .heating-screen .text {
+    order: 2;
+    text-align: center;
+    margin: auto;
+    margin-top: 73%;
+    margin-bottom: 0;
+    font-size: 14px;
+    font-weight: 400;
+    color: black; }
+  .heating-screen .material-icons {
+    font-size: 36px; }
+
+.result-screen {
+  position: absolute;
+  top: 0;
+  left: 0;
+  width: 100%;
+  height: 100%;
+  background-color: #48C3FA;
+  display: flex;
+  flex-direction: column;
+  justify-content: space-between;
+  z-index: 10; }
+  .result-screen .material-icons {
+    font-size: 24px;
+    margin-top: 15%; }
+  .result-screen .warming-info {
+    order: 1;
+    position: relative;
+    top: 3%;
+    font-size: 13px;
+    text-align: center;
+    margin: 17px;
+    color: #FFFFFF;
+    opacity: 0.7; }
+  .result-screen .result-svg {
+    order: 2;
+    width: 208px;
+    height: 208px;
+    margin: auto;
+    margin-top: 15%;
+    margin-left: 22%; }
+    body.platform-android .result-screen .result-svg {
+      margin-top: 12%; }
+  .result-screen .pollution-text {
+    order: 3;
+    color: #ffffff;
+    font-size: 17px;
+    font-weight: 400;
+    margin: auto;
+    margin-top: 4%;
+    margin-bottom: 0;
+    text-align: center; }
+  .result-screen .result-title {
+    order: 4;
+    width: 100%;
+    font-size: 54px;
+    font-weight: 400;
+    line-height: 63px;
+    color: #ffffff;
+    margin: auto;
+    margin-top: 3%;
+    text-align: center; }
+  .result-screen .button-snapshot {
+    order: 5;
+    width: 300px;
+    height: 57px;
+    border-radius: 5px;
+    font-size: 20px;
+    font-weight: 400;
+    color: #21A5E0;
+    background-color: #ffffff;
+    margin: auto;
+    margin-bottom: 5%; }
+    body.platform-android .result-screen .button-snapshot {
+      color: #0EA4E3;
+      width: 328px;
+      height: 56px; }
+
+.snapshot-screen {
+  position: absolute;
+  top: 0;
+  left: 0;
+  width: 100%;
+  height: 100%;
+  background-color: #0EA4E3;
+  display: flex;
+  z-index: 10;
+  flex-direction: column;
+  justify-content: space-between; }
+  body.platform-ios .snapshot-screen {
+    background-color: #21A5E0; }
+  .snapshot-screen .measurement_table {
+    order: 1;
+    width: 100%;
+    height: 27%;
+    background-color: white;
+    font-size: 16px; }
+    body.platform-ios .snapshot-screen .measurement_table {
+      position: relative;
+      top: 2%;
+      left: 4%;
+      width: 92%;
+      height: 24%;
+      background-color: white;
+      border-radius: 12px;
+      opacity: 0.95; }
+  .snapshot-screen th {
+    position: absolute;
+    width: 100%;
+    height: 48px;
+    margin-bottom: 0;
+    padding-top: 20px; }
+    body.platform-android .snapshot-screen th::after {
+      content: "";
+      background: #D8D8D8;
+      position: absolute;
+      top: 70%;
+      bottom: 0;
+      left: 5%;
+      height: 1px;
+      width: 90%; }
+  .snapshot-screen input:not([type]), .snapshot-screen input[type="text"] {
+    color: black;
+    font-size: 16px;
+    font-weight: 400;
+    text-align: center;
+    border: none;
+    outline: none;
+    outline-offset: 0;
+    -webkit-appearance: none; }
+    body.platform-ios .snapshot-screen input:not([type]), body.platform-ios .snapshot-screen input[type="text"] {
+      font-size: 17px; }
+  .snapshot-screen ::-webkit-input-placeholder {
+    color: #929292; }
+  .snapshot-screen :-moz-placeholder {
+    /* Firefox 18- */
+    color: #929292; }
+  .snapshot-screen ::-moz-placeholder {
+    /* Firefox 19+ */
+    color: #929292; }
+  .snapshot-screen :-ms-input-placeholder {
+    color: #929292; }
+  .snapshot-screen tr {
+    height: 20px; }
+  .snapshot-screen .name {
+    position: relative;
+    top: 15%;
+    left: 5%;
+    font-size: 17px;
+    text-align: left;
+    font-weight: 400;
+    color: #3A3A3A; }
+  .snapshot-screen .result-value {
+    position: relative;
+    top: 15%;
+    right: 5%;
+    font-size: 17px;
+    text-align: right;
+    font-weight: 500;
+    color: #3A3A3A; }
+  .snapshot-screen .date {
+    position: relative;
+    top: 25px;
+    left: 7%;
+    display: inline;
+    font-size: 14px;
+    font-weight: 400;
+    text-align: left;
+    line-height: 20px;
+    color: #929292; }
+  .snapshot-screen .time {
+    position: relative;
+    top: 25px;
+    left: 7%;
+    display: inline;
+    font-size: 14px;
+    font-weight: 400;
+    line-height: 20px;
+    text-align: left;
+    color: #929292; }
+  .snapshot-screen .button-container {
+    order: 2;
+    width: 328px;
+    margin: auto;
+    margin-bottom: 0; }
+  .snapshot-screen .button-cancel {
+    width: 328px;
+    height: 56px;
+    border-radius: 4px;
+    font-size: 20px;
+    font-weight: 400;
+    color: #FFFFFF;
+    background-color: rgba(0, 0, 0, 0.4);
+    margin-bottom: 5%; }
+    body.platform-ios .snapshot-screen .button-cancel {
+      background-color: rgba(0, 0, 0, 0.2);
+      width: 300px;
+      height: 57px;
+      margin-left: 4%; }
+  .snapshot-screen .button-history {
+    width: 328px;
+    height: 56px;
+    border-radius: 4px;
+    font-size: 20px;
+    font-weight: 400;
+    color: #0EA4E3;
+    background-color: #ffffff;
+    margin-bottom: 5%; }
+    body.platform-ios .snapshot-screen .button-history {
+      width: 300px;
+      height: 57px;
+      margin-left: 4%;
+      color: #21A5E0; }
+  .snapshot-screen .slideleft {
+    animation: 1s 1 normal slideleft; }
+
+@keyframes slideleft {
+  from {
+    margin-left: initial; }
+  to {
+    margin-left: -100%; } }
+  .snapshot-screen .slideright {
+    animation: 1s 1 normal slideright; }
+
+@keyframes slideright {
+  from {
+    margin-left: 0%; }
+  to {
+    margin-left: 100%; } }
+  .snapshot-screen .slidedown {
+    animation: 1s 1 normal slidedown; }
+
+@keyframes slidedown {
+  from {
+    margin-top: -100%; }
+  to {
+    margin-top: 0%; } }

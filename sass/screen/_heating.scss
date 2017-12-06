@@ -1,0 +1,32 @@
+.heating-screen {
+	@include position(absolute, 0 null null 0);
+	width: 100%; height: 100%;
+  body.platform-ios & {
+	background-color: #EEEEEE;
+  }
+  .warming-text {
+    order: 1;
+    margin: auto;
+    margin-top: 25%;
+    text-align: center;
+    font-size: 14px;
+    font-weight: 400;
+    color: rgba(0,0,0,54);
+  }
+
+  .text {
+    order: 2;
+    text-align: center;
+    margin: auto;
+    margin-top: 73%;
+    margin-bottom: 0;
+    font-size: 14px;
+    font-weight: 400;
+    color: rgba(0,0,0,54);
+  }
+
+  .material-icons {
+    font-size: 36px;
+  }
+
+}

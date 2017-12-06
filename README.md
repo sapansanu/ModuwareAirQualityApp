@@ -1,2 +1,2 @@
-# ModuwareAirQualityApp
-Application for Air Quality module
+# tile-air-quality
+Tile for Air Quality module
